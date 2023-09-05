@@ -1,30 +1,38 @@
-import 'package:flutter/material.dart';
+//Dart projekti alkaa lib/main.dart tiedostosta
+//2. Suoritus alkaa main funktiosta. Lisää tähän tiedostoon main funktio.
+//3. Flutter käynnistyy runApp- funktiosta. Lisää se funktio.
+//4. Flutter käyttää material Desing UI-kirjastoa, lisää sen widget
+//5. Käyttöliittymän rakennus alkaa jostakin widgetistä, lisää se widget
+//6. Lisää tekstiä, joka on keskitetty.
 
-//koodi rakentuu kahdesta erilaisista "sanoista"
-// 1. keywords, ohjelmointikieli määrittelee
-// 2. identifiers, ohjelmoijat määrittelevät
+import 'package:flutter/material.dart'; //flutteria varten
+import 'package:first_app/gradient_container.dart'; //gradienContaineri tarvitsee tiedon minne se on siirretty
 
 void main() {
-  // Määritellään funktio (pitää olla tämä aluksi joka käynnistää tuon varsinaisen sovelluksen. On aloituspiste dart kielessä)
+  //määritellään funktio
 
-  //funktion body
   runApp(
     const MaterialApp(
-      //const, data on immuntable (muuttumaton)
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+        //tekee visuaalisesta näkymästä paremman
+        body: GradientContainer(),
       ),
     ),
-  ); //Suoritetaan funktio (kutsutaan tämän nimistä funktiota joka käynnistää sovelluksen.) Suoritetaan flutter frameworkin funktio
+  ); //Suoritetaan funktio
 }
 
-void add({num1, num2}) {
-  //funktion rakennus. Määrittely. Named parameters
-  num1 + num2;
-}
+// Flutter on "type-safe" kieli. Type, tarkoittaa data tyyppiä.
+// Data            -> Data tyypin nimi
+// 'Hello World!' -> string/objekti
+// 29             -> int/ num /objekti
+// MaterialApp    -> MaterialApp / widget / objekti
+// OmaLuokkaWidget-> OmaluokkaWidget / widget /objekti
 
-void test() {
-  add(num1: 5, num2: 3); //suoritetaan funktio. Käytetään named parameters
-}
+// Luokilla voidaan tehdä omia datarakenteita tai datatyyppejä
+
+// Luokka on kokoelma dataa ja toiminnallisuutta.
+// 1. Data on muuttujia / variables /properties (Muuttuja joka on luokan sisällä)
+// 2. toiminnallisuus on funktio / Function / method (funktiota luokan sisällä kutsutaan metodiksi)
+// 3. rakentaja funktio / constructor, voidaan määrittää koodia, joka
+// suoritetaan kun luokasta luodaan oliota /objektia.
+
